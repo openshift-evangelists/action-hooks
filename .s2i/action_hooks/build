@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# This is a 'build' action hook script. This script must be executable
+# and will be run by the S2I process after the original S2I 'assemble'
+# script has been run. This hook is to allow a user to run additional
+# build steps which may need the source code or build artefacts in
+# place, or to setup any data required for the application.
+
+set -eo pipefail
+
+# Dump out the set of environment variables which were used by the build.
+
+echo " -----> Initial environment variables set by builder image."
+
+env
+
+# Dump out the name of the current working directory.
+
+echo " -----> Current working directory."
+
+pwd
+
+# Dump out the contents of the current working directory.
+
+echo " -----> Contents of the current working directory after build run."
+
+ls -R .
