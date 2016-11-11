@@ -138,7 +138,7 @@ You should not print any messages from ``deploy_env`` as that will be executed f
 You can see how the action hooks mechanism works by deploying this source code repository as an application under OpenShift 3 using the command:
 
 ```
-oc new-app https://github.com/getwarped/action-hooks
+oc new-app https://github.com/getwarped/action-hooks.git
 ```
 
 This will deploy a small Python web application. You can check the build logs and logs for the pod to see progress messages as everything is being run, including output from the sample action hook scripts provided.
