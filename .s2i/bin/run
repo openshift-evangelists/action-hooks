@@ -24,9 +24,9 @@ export S2I_SOURCE_PATH
 # already been run. It could have already been run from the shell login
 # environment.
 
-if [ x"S2I_MARKER_ENVIRON" != x"" ]; then
-    S2I_MARKER_ENVIRON=`date`
-    export S2I_MARKER_ENVIRON
+if [ x"S2I_MARKERS_ENVIRON" != x"" ]; then
+    S2I_MARKERS_ENVIRON=`/usr/bin/date`
+    export S2I_MARKERS_ENVIRON
 
     if [ -f $S2I_SOURCE_PATH/.s2i/action_hooks/deploy_env ]; then
         echo " -----> Running $S2I_SOURCE_PATH/.s2i/action_hooks/deploy_env"
