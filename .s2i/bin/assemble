@@ -106,3 +106,13 @@ fi
 EOF
     fi
 fi
+
+# If the source directory is /opt/app-root/src we assume we can fix up
+# permissions on everything below /opt/app-root. For any other directory
+# structure only fix up the permissions on the source directory itself.
+
+if [ "$S2I_SOURCE_PATH" = "/opt/app-root/src" ]; then
+    fix-permissions /opt/app-root
+else
+    fix-permissions $S2I_SOURCE_PATH
+fi
